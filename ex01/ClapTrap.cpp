@@ -1,29 +1,26 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void) :
-	name(""), hit_points(10), energy_points(10), attack_damage(0) {
+   	name(), hit_points(10), energy_points(10), attack_damage(0) {
 	std::cout << "ClapTrap " << name << " Default constructor constructed" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string& _name) :
-	name(_name), hit_points(10), energy_points(10), attack_damage(0) {
+   	name(_name), hit_points(10), energy_points(10), attack_damage(0) {
 	std::cout << "ClapTrap " << name << " String constructor called" << std::endl;
 }
 
-ClapTrap::~ClapTrap(void)
-{
+ClapTrap::~ClapTrap(void) {
 	std::cout << "ClapTrap " << name << " Destructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& c)
-{
+ClapTrap::ClapTrap(const ClapTrap& c) {
 	std::cout << "ClapTrap " << name << " Copy constructor called" << std::endl;
 	*this = c;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& c)
 {
-//	std::cout << "ClapTrap " << name << " Copy assignement operation called" << std::endl;
 	if (this != &c)
 	{
 		name = c.name;
