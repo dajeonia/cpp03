@@ -23,7 +23,6 @@ ClapTrap::ClapTrap(const ClapTrap& c)
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& c)
 {
-//	std::cout << "ClapTrap " << name << " Copy assignement operation called" << std::endl;
 	if (this != &c)
 	{
 		name = c.name;
