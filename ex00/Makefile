@@ -1,6 +1,6 @@
 NAME = a.out
-SOURCES = main.cpp
-INCLUDES = 
+SOURCES = main.cpp ClapTrap.cpp
+INCLUDES = ClapTrap.hpp
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SOURCES:.cpp=.o))
 SRCS = $(addprefix $(SRC_DIR)/, $(SOURCES))
@@ -10,8 +10,8 @@ SRC_DIR = .
 OBJ_DIR = objs
 INC_DIR = .
 
-CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -I $(INC_DIR)
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -I $(INC_DIR)
 
 all : $(NAME)
 
@@ -24,10 +24,10 @@ re :
 	make all
 
 $(NAME) : $(OBJS) $(INCS)
-	$(CC) $(CFLAGS) $(OBJS) -I $(INC_DIR) -o $@
+	$(CXX) $(CXXFLAGS) $(OBJS) -I $(INC_DIR) -o $@
 
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(OBJ_DIR) : 
 	mkdir $@

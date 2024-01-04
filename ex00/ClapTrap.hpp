@@ -1,11 +1,22 @@
+#ifndef CLAPTRAP_CPP
+# define CLAPTRAP_CPP
+# include <iostream>
+
 class ClapTrap {
 	std::string name;
-	int hit_points;
-	int energy_points;
-	int attack_damage;
+	unsigned int hit_points;
+	unsigned int energy_points;
+	unsigned int attack_damage;
 public:
 	ClapTrap();
-	~ClapTrap();
 	ClapTrap(const ClapTrap&);
+	ClapTrap(const std::string&);
 	ClapTrap& operator=(const ClapTrap&);
-}
+	~ClapTrap();
+
+	void attack(const std::string& target);
+	void takeDamage(unsigned int amount);
+	void beRepaird(unsigned int amount);
+};
+
+#endif
