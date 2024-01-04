@@ -10,13 +10,11 @@ ClapTrap::ClapTrap(const std::string& _name) :
 	std::cout << "ClapTrap " << name << " String constructor called" << std::endl;
 }
 
-ClapTrap::~ClapTrap(void)
-{
+ClapTrap::~ClapTrap(void) {
 	std::cout << "ClapTrap " << name << " Destructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& c)
-{
+ClapTrap::ClapTrap(const ClapTrap& c) {
 	std::cout << "ClapTrap " << name << " Copy constructor called" << std::endl;
 	*this = c;
 }
