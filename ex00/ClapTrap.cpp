@@ -10,13 +10,11 @@ ClapTrap::ClapTrap(const std::string& _name) :
 	std::cout << "ClapTrap " << name << " String constructor called" << std::endl;
 }
 
-ClapTrap::~ClapTrap(void)
-{
+ClapTrap::~ClapTrap(void) {
 	std::cout << "ClapTrap " << name << " Destructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& c)
-{
+ClapTrap::ClapTrap(const ClapTrap& c) {
 	std::cout << "ClapTrap " << name << " Copy constructor called" << std::endl;
 	*this = c;
 }
@@ -37,7 +35,7 @@ void	 ClapTrap::attack(const std::string& target)
 {
 	if (hit_points)
 	{
-		if (energy_points > 0)
+		if (energy_points)
 		{
 			std::cout << "ClapTrap " << name << " attacks " << "ClapTrap " << target << ", causing " << attack_damage << " points of damage!" << std::endl;
 			--energy_points;
@@ -52,7 +50,7 @@ void	 ClapTrap::beRepaird(unsigned int amount)
 {
 	if (hit_points)
 	{
-		if (energy_points > 0)
+		if (energy_points)
 		{
 			std::cout << "ClapTrap " << name << " repairs " << amount << " hit points!" << std::endl;
 			--energy_points;
